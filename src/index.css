@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,12 +12,17 @@ body,
   width: 100%;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .fa-brands{
-  transition: all .3s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .fa-brands:hover{
   color: #4080E7;
+}
+
+.lishadow{
+  box-shadow: 0 0 10px rgba(0,0,0,.09);
 }
