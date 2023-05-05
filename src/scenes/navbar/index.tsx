@@ -10,18 +10,18 @@ const Navbar = (props: Props) => {
 
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
 
-    return <nav id="home" className={`${flexBetween} fixed top-0 z-30 w-full py-6 text-xl shadow-md bg-white`}>
+    return <nav className={`${flexBetween} fixed top-0 z-30 w-full py-6 text-xl shadow-md bg-white`}>
         <div className={`${flexBetween} mx-auto w-5/6`}>
             {/* LEFT SIDE */}
-            <div className="font-bold">Henry.dev</div>
+            <a href='#home' className="font-bold">Henry.dev</a>
 
             {/* RIGHT SIDE */}
             {isAboveMediumScreens ? (
                 <div className="flex gap-5 font-semibold text-lg">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#home" className="btn">Home</a>
+                    <a href="#about" className="btn">About</a>
+                    <a href="#projects" className="btn">Projects</a>
+                    <a href="#contact" className="btn">Contact</a>
                 </div>)
                 :
                 (
