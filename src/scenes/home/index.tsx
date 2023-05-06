@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div id="home" className="flex relative justify-center bg-[#f9f9f9] pt-32 pb-20 px-5 md:pt-56 md:h-screen">
 
-      <div className="md:w-[1000px] md:px-10">
+      <div className="md:w-[1000px]">
 
         {/* INTRODUCTION SIDE */}
         <div className="flex flex-col items-center text-center mb-20 gap-7 md:gap-[5rem] md:mb-32 md:flex-row md:items-stretch md:text-left">

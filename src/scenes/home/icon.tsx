@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 
-
 const Icon = (props: { src: string; }) => {
 
   const iconStyle = "lishadow bg-white rounded-full h-[4rem] w-[4rem] flex justify-center items-center hover:shadow-none";
