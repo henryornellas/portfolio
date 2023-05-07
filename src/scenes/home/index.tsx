@@ -5,7 +5,7 @@ import { icons } from "./icons";
 
 const Home = () => {
 
-  const items = [{ src: "html" }, { src: "css" }, { src: "javascript" }, { src: "typescript" }, { src: "react" }, { src: "tailwindcss" }, { src: "node" }, { src: "mongodb" }];
+
   return (
     <div id="home" className="flex relative justify-center bg-[#f9f9f9] pt-32 pb-20 px-5 md:pt-56 md:h-screen">
 
