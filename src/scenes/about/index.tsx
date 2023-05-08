@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 const About = () => {
     return (
-        <div id="about" className="flex justify-center text-center py-10 md:py-44">
+        <div id="about" className="flex justify-center text-center p-10 md:py-44">
 
-            <div className="flex items-center flex-col w-[80%] gap-8 md:w-[1000px] md:flex-row md:gap-20 md:items-stretch">
+            <div className="flex items-center flex-col gap-8 md:w-[1000px] md:flex-row md:gap-20 md:items-stretch">
 
                 <motion.div
                     initial="hidden"
@@ -36,8 +36,8 @@ const About = () => {
                         visible: { opacity: 1, x: 0, }
                     }}
                     className="flex flex-col justify-between md:w-[50%]  md:text-left gap-5">
-                    <h4 className="text-[#4080E7] font-bold text-lg">ABOUT ME</h4>
-                    <h3 className="text-2xl font-extrabold">A dedicated Full-stack Developer based in Brazil. 📍</h3>
+                    <h4 className="text-[#4080E7] font-bold text-xl">ABOUT ME</h4>
+                    <h3 className="text-3xl font-extrabold">A dedicated Full-stack Developer based in Brazil. 📍</h3>
                     <p>
                         As a Junior Full-stack Developer, I possess skills in HTML, CSS, JavaScript, React, Tailwind, Node and MongoDB.
                         I excel in designing and maintaining responsive websites that offer a smooth user experience. My expertise lies in crafting dynamic,
