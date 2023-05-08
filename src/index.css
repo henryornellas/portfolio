@@ -25,6 +25,10 @@ body,
   box-shadow: 0 0 10px rgba(0,0,0,.09);
 }
 
+.circle a:hover{
+  box-shadow: 0 0 3px #4080E7;
+}
+
 .spin {
   animation-name: spin;
   animation-duration: 7000ms;

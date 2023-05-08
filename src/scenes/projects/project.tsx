@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 type Props = {
     src: string,
     name: string,
@@ -11,13 +13,22 @@ type Props = {
 
 const Project = (props: Props) => {
     return (
-        <div className="bg-white flex lishadow justify-between w-fit flex-col gap-5 h-[50rem] rounded-2xl md:h-[25rem] p-6 md:flex-row md:w-[1000px]">
-            {/* IMAGE SIDE */}
-            <div
-            className={`rounded-2xl overflow-hidden w-[35rem] md:w-[55%] bg-cover h-full bg-no-repeat lishadow proj md:order-${props.order}`}
-            style={{ backgroundImage: `url(/src/assets/${props.src}.png)` }}>
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: .8 }}
+            variants={{
+                hidden: {opacity: 0, x: 50},
+                visible: { opacity: 1, x: 0, }
+            }}
+            className="bg-white flex lishadow justify-between w-fit flex-col gap-5 h-[50rem] rounded-2xl md:h-[25rem] p-6 md:flex-row md:w-[1000px]">
 
-            <a href={props.liveDemo} className="h-full w-full flex" target="_blank" />
+            {/* IMAGE SIDE */}
+            <div className={`rounded-2xl overflow-hidden w-[35rem] md:w-[55%] bg-cover h-full bg-no-repeat lishadow proj md:order-${props.order}`}
+                style={{ backgroundImage: `url(/src/assets/${props.src}.png)` }}>
+
+                <a href={props.liveDemo} className="h-full w-full flex" target="_blank" />
 
             </div>
 
@@ -38,7 +49,7 @@ const Project = (props: Props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

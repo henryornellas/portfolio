@@ -34,7 +34,7 @@ export const all = [
     {
         src: 'authentication',
         name: 'SECRETS 🔑',
-        description: 'This is a WebApp for posting your secrets anonymously when authenticated, it uses passport and google auths to register, login and save cookies.',
+        description: 'App for posting your secrets anonymously when authenticated, it uses passport and google auths to register, login and save cookies.',
         code: 'https://github.com/henryornellas/authentication-test',
         liveDemo: 'https://authentication-rp1h.onrender.com/',
         tech1: 'NodeJS',

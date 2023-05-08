@@ -67,7 +67,7 @@ const Home = () => {
             <ul className="flex flex-wrap justify-center gap-6">
               {/* ICONS */}
               {items.map((item) => (
-                <Icon src={item.src} />
+                <Icon src={item.src} key={item.src}/>
               ))}
 
             </ul>
