@@ -2,9 +2,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { useState } from "react";
 
-type Props = {}
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
     const flexBetween = "flex items-center justify-between";
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
