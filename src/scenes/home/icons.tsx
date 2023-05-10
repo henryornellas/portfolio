@@ -1,5 +1,10 @@
+import html from "/src/assets/html.svg";
+
+
+
+
 export const icons = [
-{ src: "/src/assets/html.svg" },
+{ src: html },
 { src: "/src/assets/css.svg" },
 { src: "/src/assets/javascript.svg" },
 { src: "/src/assets/typescript.svg" },
