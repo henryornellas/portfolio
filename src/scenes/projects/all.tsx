@@ -1,6 +1,15 @@
+import shredded from '/src/assets/shredded.png';
+import ziba from '/src/assets/ziba.png';     
+import blog from '/src/assets/blog.png';     
+import authentication from '/src/assets/authentication.png';     
+import dinder from '/src/assets/dinder.png';     
+
+
+
+
 export const all = [
     {
-        src: 'shredded',
+        src: shredded,
         name: 'SHREDDED 🔴',
         description: 'Gym brand website that provides information about gym services, different classes, and membership plans.',
         code: 'https://github.com/henryornellas/shredded',
@@ -11,7 +20,7 @@ export const all = [
 
     },
     {
-        src: 'ziba',
+        src: ziba,
         name: 'ZIBA DELIVERY 🛒',
         description: 'Delivery website where users can choose different type of foods and add them to cart. With a modern and intuitive design.',
         code: 'https://github.com/henryornellas/ziba-delivery',
@@ -22,7 +31,7 @@ export const all = [
 
     },
     {
-        src: 'blog',
+        src: blog,
         name: 'EJS BLOG 📕',
         description: 'A Blog website where you can write your notes and post them. It features a simple design and easy posting experience.',
         code: 'https://github.com/henryornellas/EJS-Blog',
@@ -32,7 +41,7 @@ export const all = [
         order: 'first'
     },
     {
-        src: 'authentication',
+        src: authentication,
         name: 'SECRETS 🔑',
         description: 'App for posting your secrets anonymously when authenticated, it uses passport and google auths to register, login and save cookies.',
         code: 'https://github.com/henryornellas/authentication-test',
@@ -42,7 +51,7 @@ export const all = [
         order: 'last'
     },
     {
-        src: 'dinder',
+        src: dinder,
         name: 'DINDER 🔥',
         description: 'Relationship App page displaying plans and users testimonials using the Bootstrap framework.',
         code: 'https://github.com/henryornellas/Dinder',

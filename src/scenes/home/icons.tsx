@@ -1,15 +1,22 @@
 import html from "/src/assets/html.svg";
+import css from "/src/assets/css.svg";
+import javascript from "/src/assets/javascript.svg";
+import typescript from "/src/assets/typescript.svg";
+import react from "/src/assets/react.svg";
+import tailwindcss from "/src/assets/tailwindcss.svg";
+import node from "/src/assets/node.svg";
+import mongodb from "/src/assets/mongodb.svg";
 
 
 
 
 export const icons = [
 { src: html },
-{ src: "/src/assets/css.svg" },
-{ src: "/src/assets/javascript.svg" },
-{ src: "/src/assets/typescript.svg" },
-{ src: "/src/assets/react.svg" },
-{ src: "/src/assets/tailwindcss.svg" },
-{ src: "/src/assets/node.svg" },
-{ src: "/src/assets/mongodb.svg" }
+{ src: css },
+{ src: javascript },
+{ src: typescript },
+{ src: react },
+{ src: tailwindcss },
+{ src: node },
+{ src: mongodb }
 ];
