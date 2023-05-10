@@ -1,6 +1,7 @@
 import notebook from "/src/assets/notebook.jpeg";
 import computerguy from "/src/assets/computerGuy.png";
 import { motion } from "framer-motion";
+import rotate from '/src/assets/circleText.svg';
 
 const About = () => {
     return (
@@ -22,7 +23,7 @@ const About = () => {
                     <img className="pcguy absolute bottom-0 right-0 w-16 z-10" src={computerguy} alt="" />
 
                     <span className="spin absolute bottom-[-62px] right-[-57px] bg-white rounded-full p-2">
-                        <img className="circle w-[10rem]" src="/src/assets/circleText.svg" alt="circle" />
+                        <img className="circle w-[10rem]" src={rotate} alt="circle" />
                     </span>
                 </motion.div>
 
