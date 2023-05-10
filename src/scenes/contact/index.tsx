@@ -25,7 +25,7 @@ const Contact = () => {
                         <a href="https://www.google.com/maps/place/Minas+Gerais/" target="_blank" className={circle}><i className="text-[2rem] text-[#4080E7] fa-solid fa-map-location-dot" /></a>
                         <div className="flex flex-col text-center md:items-start">
                             <p className="text-xl font-bold mb-2">Location</p>
-                            <a href="https://www.google.com/maps/place/Minas+Gerais/" target="_blank" className="hover:text-[#4080E7]">Minas Gerais, Braaasdasdzil</a>
+                            <a href="https://www.google.com/maps/place/Minas+Gerais/" target="_blank" className="hover:text-[#4080E7]">Minas Gerais, Brazil</a>
                         </div>
                     </div>
 
