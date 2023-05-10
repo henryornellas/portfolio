@@ -8,15 +8,15 @@ const Contact = () => {
         <div id="contact" className="bg-white py-16 px-10 flex justify-center md:py-28">
 
             <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: .8 }}
-            variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { opacity: 1, x: 0, }
-            }}
-            className="w-[1000px] flex flex-col items-center md:items-start">
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: .8 }}
+                variants={{
+                    hidden: { opacity: 0, x: -50 },
+                    visible: { opacity: 1, x: 0, }
+                }}
+                className="w-[1000px] flex flex-col items-center md:items-start">
                 <h4 className="text-[#4080E7] font-bold text-xl mb-5">CONTACT</h4>
                 <h3 className="text-3xl font-extrabold mb-20">Don't be shy! Hit me up! 👇🏻</h3>
 

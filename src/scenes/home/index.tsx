@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import mephoto from "../../assets/mephoto.jpg";
 import Icon from "./icon";
+import { icons } from "./icons";
 
 const Home = () => {
 
@@ -66,8 +67,8 @@ const Home = () => {
           <div>
             <ul className="flex flex-wrap justify-center gap-6">
               {/* ICONS */}
-              {items.map((item) => (
-                <Icon src={item.src} key={item.src}/>
+              {icons.map((item) => (
+                <Icon src={item.src} key={item.src} />
               ))}
 
             </ul>

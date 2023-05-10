@@ -19,7 +19,7 @@ const Project = (props: Props) => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: .8 }}
             variants={{
-                hidden: {opacity: 0, x: 50},
+                hidden: { opacity: 0, x: 50 },
                 visible: { opacity: 1, x: 0, }
             }}
             className="bg-white flex lishadow justify-between w-fit flex-col gap-5 h-[50rem] rounded-2xl md:h-[25rem] p-6 md:flex-row md:w-[1000px]">
