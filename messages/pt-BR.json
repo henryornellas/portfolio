@@ -1,0 +1,31 @@
+{
+  "navbar": {
+    "1": "Home",
+    "2": "Sobre",
+    "3": "Projetos"
+  },
+  "hero": {
+    "intro": "Olá, eu sou o Henry, um",
+    "main": "Desenvolvedor Front-End"
+  },
+  "about": {
+    "title": "SOBRE",
+    "main": {
+      "1": "Motivado pelo interesse em tecnologia, minha jornada em desenvolvimento web começou com tutoriais de internet e bootcamps.",
+      "2": "Desde então, já criei interfaces intuitivas e responsivas que além de bonitas, também oferecem uma ótima experiência do usuário.",
+      "3": "Com <exp></exp> anos de experiência, já construi aplicações web e mobile de alta qualidade, que atendem às necessidades de vários setores através de projetos reais.",
+      "4": "Atualmente buscando meu objetivo de inovação e aprendizado transformando ideias de design em realidade na <company>@ Flow</company>, enquanto curso Sistemas de Informação."
+    }
+  },
+  "projects": {
+    "title": "PROJETOS",
+    "1": "Website e App: soluções para gerenciamento de pátio, automatização do processo de recebimento de descargas e agendamento de coletas. Gestão de compras, relatórios e pedidos. Com visualizações para clientes e fornecedores, permitindo o controle de ambas as partes.",
+    "2": "A plataforma inclui a visão do profissional para gerenciamento de pacientes, relatórios, planejamentos e verificação da viabilidade dos implantes. Pode ser usada no contexto de clínica ou independente. O software analisa a estabilidade das próteses, considerando o número e posicionamento dos implantes. Utiliza cálculos estruturais, dados de força e mais.",
+    "3": "Especializada em arquitetura, design de interiores, marcenaria e gestão de construção, o foco é simplificar e executar projetos residenciais. A abordagem inclui a criação de projetos de interiores únicos e personalizados, que proporcionam espaços funcionais, estéticos e harmoniosos.",
+    "4": "Especializada em identidades digitais legais e soluções burocráticas nos cartórios e repartições públicas do Brasil, o foco é combinar tecnologia e profissionalismo. Como Autoridade Certificadora de primeiro nível credenciada pela ICP-Brasil, a autenticação de identidades para Certificados Digitais garante validade legal para a assinatura remota de documentos.",
+    "5": "Plataforma que oferece planos de estudo personalizados. Inclui a visão do aluno com perguntas de diferentes matérias, simulados, gráficos de desempenho e mais. A MIIA oferece rotinas de estudo acessíveis com ferramentas motivacionais familiares, como recordes e histórico, para manter os alunos engajados. A MIIA utiliza Inteligência Artificial para otimizar os planos de estudo."
+  },
+  "metaData": {
+    "title": "Henry | Desenvolvedor Front-end"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "navbar": {
+    "1": "Home",
+    "2": "About",
+    "3": "Projects"
+  },
+  "hero": {
+    "intro": "Hi, I'm Henry, a",
+    "main": "Front-End Developer"
+  },
+  "about": {
+    "title": "ABOUT",
+    "main": {
+      "1": "Motivated by an interest in technology, my web development journey began with internet tutorials and bootcamps.",
+      "2": "Since the, I've create intuitive and responsive interfaces, that not only look good, but also provide a great user experience.",
+      "3": "With <exp></exp> years of experience, I've developed both web and mobile high-quality apps, that meet the needs of multiple sectors through real world projects.",
+      "4": "Currently pursuing my goal of innovation and learning by turning design ideas into reality at <company>@ Flow</company>, while finishing my computer science degree."
+    }
+  },
+  "projects": {
+    "title": "PROJECTS",
+    "1": "Website e App: solutions for truck yard management, automation the process of receiving deliveries and scheduling pickups. Purchases, reports & orders management. Client and supplier views for both ends control.",
+    "2": "The platform includes the dentist view for patient management, reports, planning, and assessment of implant viability. It can be used within a clinic context or independently. The software analyzes the stability of prosthetics, considering the number and positioning of implants, using structural calculations, force data, and more.",
+    "3": "Specializing in architecture, interior design, carpentry, and construction management, the focus is on simplifying and executing residential projects. The approach includes creating unique and personalized interior designs that provide functional, aesthetic, and harmonious spaces.",
+    "4": "Specializing in legal digital identities and bureaucratic solutions in Brazilian notaries and public offices, the focus is on combining technology and professionalism. As a first-level Certification Authority accredited by ICP-Brasil, identity authentication for Digital Certificates ensures legal validity for remote signing of documents.",
+    "5": "A platform offering personalized study plans. It includes the student's view with questions from various subjects, mock exams, performance charts, and more. MIIA provides accessible study routines with familiar motivational tools like streaks and history to keep students engaged. MIIA utilizes Artificial Intelligence to optimize study plans."
+  },
+  "metaData": {
+    "title": "Henry | Front-end Developer"
+  }
+}
