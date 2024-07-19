@@ -65,18 +65,44 @@ type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
 export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null);
+  
+  const html = document.documentElement
+  const userTheme = localStorage.getItem("theme")
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+  
+  const initialTheme = () => {
+    if (userTheme?.includes("dark") || (!userTheme && systemTheme)) {
+      return "dark"
+    } else {
+      return "light"
+    }
+  }
+
+  const [theme, setTheme] = useState(initialTheme);
+  
+  function callback(mutationList: any) {
+    mutationList.forEach((e: MutationRecord) => {
+      if (e.type === 'attributes' && e.attributeName === 'class') {
+        setTheme(html.classList.contains("dark") ? "dark" : "light")
+      }
+    })
+  }
+
+  const observer = new MutationObserver(callback)
+  observer.observe(html, { attributes: true })
 
   useEffect(() => {
     fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
-  }, [iconSlugs]);
+
+  }, [iconSlugs, theme]);
 
   const renderedIcons = useMemo(() => {
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, "dark")
+      renderCustomIcon(icon, theme)
     );
-  }, [data]);
+  }, [data, theme]);
 
   return (
     // @ts-ignore

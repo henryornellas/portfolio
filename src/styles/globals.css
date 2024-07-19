@@ -1,5 +1,10 @@
 @tailwind base;
 @tailwind components;
+
+@import "./glass.css";
+@import "./scrollbar.css";
+@import "./linear-wipe.css";
+
 @tailwind utilities;
 
 *,
@@ -8,97 +13,9 @@ html {
 }
 
 body {
+  background: linear-gradient(140deg, rgb(242, 242, 247) 0%, rgb(229, 229, 243) 100%);
+}
+
+.dark body {
   background: linear-gradient(140deg, rgb(0, 0, 0) 0%, rgb(10, 10, 14) 100%);
-  /* background-attachment: fixed; */
 }
-
-/* SEPARAR DEPOIS */
-
-::-webkit-scrollbar {
-  width: 6px;
-  background-color: black;
-}
-
-::-webkit-scrollbar-thumb {
-  background: white;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000;
-}
-
-@layer components {
-  .navbar {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(10, 10, 12, 0.1));
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-  }
-
-  .linear-wipe {
-    background: linear-gradient(
-      to right,
-      rgb(255, 255, 255) 20%,
-      rgb(99, 99, 102) 51%,
-      rgb(72, 72, 74) 58%,
-      rgb(99, 99, 102) 67%,
-      rgb(255, 255, 255) 80%
-    );
-    background-size: 500% auto;
-    color: #000;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 6s ease-in-out infinite;
-  }
-
-  .glass {
-    position: relative;
-    display: inline-block;
-    background: linear-gradient(rgba(34, 34, 36, 0.3), rgba(30, 30, 34, 0.1));
-    border-radius: 35px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  .glass::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 35px;
-    padding: 1.5px;
-
-    background: linear-gradient(rgba(58, 58, 60, 0.5), rgba(0, 0, 0, 0.8));
-
-    mask: linear-gradient(#fff 0 0) content-box;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-
-    pointer-events: none;
-  }
-
-  @keyframes shine {
-    0% {
-      background-position: 100% center;
-    }
-    70% {
-      background-position: 0 center;
-    }
-    100% {
-    }
-  }
-}
-
-/* rgb(142, 142, 147) 20%,
-rgb(199, 199, 204) 51%,
-rgb(255, 255, 255) 58%,
-rgb(199, 199, 204) 67%,
-rgb(142, 142, 147) 80% */
-
-/* rgb(255, 255, 255) 20%,
-rgb(99, 99, 102) 51%,
-rgb(72, 72, 74) 58%,
-rgb(99, 99, 102) 67%,
-rgb(255, 255, 255) 80% */

@@ -5,6 +5,8 @@ const config: Config = {
     container: false,
   },
 
+  darkMode: "selector",
+
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,8 +16,18 @@ const config: Config = {
 
   theme: {
     extend: {
+      colors: {
+        light: "#DBDBE0",
+        dark: "#48484A"
+      },
+
       dropShadow: {
         glow: [
+          "0 0px 20px rgba(28,28,30, 0.35)",
+          "0 0px 65px rgba(28,28,30, 0.2)"
+        ],
+
+        "glow-dark": [
           "0 0px 20px rgba(242,242,247, 0.35)",
           "0 0px 65px rgba(242,242,247, 0.2)"
         ]

@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/utils";
-import { ChevronDown, MenuIcon, XIcon } from "lucide-react";
+import { ChevronDown, MenuIcon, MoonIcon, SunIcon, XIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -19,6 +19,7 @@ const langs = [
 export default function Navbar() {
   const [currentSection, setCurrentSection] = useState("home");
   const [openLangSelect, setOpenLangSelect] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState("dark");
   const [openDrawer, setOpenDrawer] = useState(false);
   const [lang, setLang] = useState("pt-BR");
 
@@ -29,8 +30,33 @@ export default function Navbar() {
 
   const t = useTranslations("navbar");
 
+  function themeSwitch() {
+    if (document) {
+      if (document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.remove("dark")
+        localStorage.setItem("theme", "light")
+        setCurrentTheme("light")
+        return
+      }
+
+      document.documentElement.classList.add("dark")
+      setCurrentTheme("dark")
+      localStorage.setItem("theme", "dark")
+    }
+  }
+
   useEffect(() => {
     const sections = document.getElementsByTagName("section");
+
+    const userTheme = localStorage.getItem("theme")
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+
+    if (userTheme?.includes("dark") || (!userTheme && systemTheme)) {
+      document.documentElement.classList.add("dark")
+      setCurrentTheme("dark")
+    } else {
+      setCurrentTheme("light")
+    }
 
     window.addEventListener("scroll", () => {
       Array.from(sections).forEach((section) => {
@@ -63,10 +89,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 w-full py-8 z-10 navbar">
-        <div className="max-w-[80%] mx-auto text-[#dbdbe0] flex flex-row items-center justify-between 2xl:max-w-[1228px]">
+      <nav className="fixed top-0 w-full py-8 z-10 backdrop-blur-[30px]">
+        <div className="max-w-[80%] mx-auto text-dark flex flex-row items-center justify-between dark:text-light 2xl:max-w-[1228px]">
           <div className="flex items-center gap-5">
-            <Link className="text-xl font-bold" href="#home">
+            <Link className="text-xl font-bold text-black dark:text-white" href="#home">
               Henry.dev
             </Link>
 
@@ -88,8 +114,8 @@ export default function Navbar() {
 
               <div
                 className={cn(
-                  "absolute space-y-1 top-[calc(100%+8px)] pointer-events-none p-2 rounded left-1/2 -translate-x-1/2 glass opacity-0 max-h-0 transition-all duration-200 before:rounded before:p-px",
-                  openLangSelect && "opacity-100 max-h-40 pointer-events-auto"
+                  "!absolute !space-y-1 !top-[calc(100%+8px)] !pointer-events-none !p-2 !rounded !left-1/2 !-translate-x-1/2 glass !opacity-0 !max-h-0 !transition-all !duration-200 before:!rounded before:!p-px",
+                  openLangSelect && "!opacity-100 !max-h-40 !pointer-events-auto"
                 )}
               >
                 {langs.map(({ flag: Flag, label, link }) => (
@@ -115,15 +141,15 @@ export default function Navbar() {
                   key={link}
                   href={link}
                   className={cn(
-                    "navLink relative bottom-0 transition-all duration-150 hover:bottom-0.5 hover:text-white hover:drop-shadow-glow",
-                    active && "text-white drop-shadow-glow"
+                    "navLink relative bottom-0 transition-all duration-150 hover:bottom-0.5 hover:text-black hover:drop-shadow-glow dark:hover:text-white dark:hover:drop-shadow-glow-dark",
+                    active && "text-black drop-shadow-glow dark:text-white dark:drop-shadow-glow-dark"
                   )}
                 >
                   {t(`${i + 1}`)}
 
                   <div
                     className={cn(
-                      "absolute -bottom-0.5 transition-all duration-150 w-0 h-px opacity-0 bg-white left-1/2 -translate-x-1/2",
+                      "absolute -bottom-0.5 transition-all duration-150 w-0 h-px opacity-0 bg-black dark:bg-white left-1/2 -translate-x-1/2",
                       active && "w-full opacity-100"
                     )}
                   />
@@ -131,29 +157,34 @@ export default function Navbar() {
               );
             })}
 
-            <button className="relative rounded-full bg-slate-600 border w-12 h-6 p-0.5">
-              <div className="bg-white rounded-full h-full aspect-square" />
+            <button onClick={themeSwitch} className="flex group toggle-theme">
+              <SunIcon className={cn("rotate-180 opacity-0 transition-all duration-300 group-hover:text-white", currentTheme === "dark" && "rotate-0 opacity-100")} />
+              <MoonIcon className={cn("rotate-0 absolute opacity-100 transition-all duration-300 group-hover:text-black", currentTheme === "dark" && "-rotate-180 opacity-0 ")} />
             </button>
           </div>
 
-          <button
-            onClick={() => setOpenDrawer(true)}
-            className="block md:hidden"
-          >
-            <MenuIcon size={26} strokeWidth={1.5} />
-          </button>
+          <div className="flex items-center gap-4 md:hidden">
+            <button onClick={themeSwitch} className="flex toggle-theme">
+              <SunIcon size={22} className={cn("rotate-180 opacity-0 transition-all duration-300", currentTheme === "dark" && "rotate-0 opacity-100")} />
+              <MoonIcon size={22} className={cn("rotate-0 absolute opacity-100 transition-all duration-300", currentTheme === "dark" && "-rotate-180 opacity-0 ")} />
+            </button>
+
+            <button onClick={() => setOpenDrawer(true)}>
+              <MenuIcon size={26} strokeWidth={1.5} />
+            </button>
+          </div>
         </div>
       </nav>
 
       <aside
         ref={drawerRef}
         className={cn(
-          "navbar fixed -right-full top-0 h-full flex flex-col gap-8 w-1/2 p-0 z-50 transition-all duration-300 border-l border-black",
+          "backdrop-blur-[30px] fixed -right-full top-0 h-full flex flex-col gap-8 w-1/2 p-0 z-50 transition-all duration-300 border-l border-light dark:border-black",
           openDrawer && "-right-2 p-8 animate-expand"
         )}
       >
-        <button onClick={() => setOpenDrawer(false)} className="ml-auto">
-          <XIcon size={26} color="#fff" />
+        <button onClick={() => setOpenDrawer(false)} className="ml-auto text-black dark:text-white">
+          <XIcon size={26} />
         </button>
 
         <div className="flex flex-col gap-8 text-xl mx-auto">
@@ -165,15 +196,15 @@ export default function Navbar() {
                 key={link}
                 href={link}
                 className={cn(
-                  "navLink w-fit relative bottom-0 text-[#dbdbe0] transition-all duration-150",
-                  active && "text-white drop-shadow-glow"
+                  "navLink w-fit relative bottom-0 text-dark transition-all duration-150 dark:text-light",
+                  active && "text-black drop-shadow-glow dark:text-white dark:drop-shadow-glow-dark"
                 )}
               >
                 {t(`${i + 1}`)}
 
                 <div
                   className={cn(
-                    "absolute -bottom-0.5 transition-all duration-150 w-0 h-px opacity-0 bg-white left-1/2 -translate-x-1/2",
+                    "absolute -bottom-0.5 transition-all duration-150 w-0 h-px opacity-0 bg-black left-1/2 -translate-x-1/2 dark:bg-white",
                     active && "w-full opacity-100"
                   )}
                 />

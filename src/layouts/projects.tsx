@@ -48,7 +48,7 @@ export default function Projects() {
       className="flex justify-center relative py-24 overflow-hidden"
     >
       <div className="flex flex-col gap-8 container w-full">
-        <h2 className="font-bold text-2xl text-white drop-shadow-glow">
+        <h2 className="font-bold text-2xl text-black drop-shadow-glow dark:text-white">
           {t("title")}
         </h2>
 
@@ -57,8 +57,8 @@ export default function Projects() {
             <div
               key={name}
               className={cn(
-                "flex flex-col items-center h-[45rem] glass p-6 gap-5 lg:h-[25rem] lg:flex-row",
-                i % 2 === 0 && "lg:flex-row-reverse"
+                "!flex !flex-col !items-center h-[45rem] glass !p-6 !gap-5 lg:!h-[25rem] lg:!flex-row",
+                i % 2 === 0 && "lg:!flex-row-reverse"
               )}
             >
               <div
@@ -70,16 +70,16 @@ export default function Projects() {
 
               <div className="flex flex-col items-center justify-between w-full py-4 lg:w-[55%] xl:w-[45%]">
                 <div className="flex justify-between h-full items-center text-center gap-8 flex-col w-[90%]">
-                  <p className="text-lg text-white font-semibold">{name}</p>
+                  <p className="text-lg text-black font-semibold dark:text-white">{name}</p>
 
-                  <p className="text-base !leading-5 text-[#dbdbe0] lg:text-sm xl:text-base">
+                  <p className="text-base !leading-5 text-black lg:text-sm xl:text-base dark:text-light">
                     {t(`${i + 1}`)}
                   </p>
 
                   <div className="flex flex-row flex-wrap items-center justify-center gap-3">
                     {techs.map((tech) => (
-                      <div key={tech} className="p-2 rounded-lg bg-[#161616]">
-                        <p className="text-sm text-white">{tech}</p>
+                      <div key={tech} className="p-2 rounded-lg bg-[rgb(220,220,226)] dark:bg-[#161616]">
+                        <p className="text-sm text-black dark:text-white">{tech}</p>
                       </div>
                     ))}
                   </div>

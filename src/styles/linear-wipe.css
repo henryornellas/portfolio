@@ -1,0 +1,44 @@
+.linear-wipe {
+  background: linear-gradient(
+    to right,
+    rgb(0, 0, 0) 20%,
+    rgb(152, 152, 160) 55%,
+    rgb(174, 174, 178) 58%,
+    rgb(152, 152, 160) 61%,
+    rgb(0, 0, 0) 80%
+  );
+  background-size: 500% auto;
+  color: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s ease-in-out infinite;
+}
+
+.dark .linear-wipe {
+  background: linear-gradient(
+    to right,
+    rgb(255, 255, 255) 20%,
+    rgb(99, 99, 102) 53%,
+    rgb(72, 72, 74) 58%,
+    rgb(99, 99, 102) 65%,
+    rgb(255, 255, 255) 80%
+  );
+  background-size: 500% auto;
+  color: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100% center;
+  }
+  70% {
+    background-position: 0 center;
+  }
+  100% {
+  }
+}

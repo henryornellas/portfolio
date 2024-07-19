@@ -3,7 +3,6 @@ import MePhoto from "@/public/assets/mephoto.jpg";
 import { IconCloud } from "@/components";
 import { slugs } from "./hero";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 export default function About() {
   const startTime = new Date(2023, 4);
@@ -19,24 +18,24 @@ export default function About() {
   return (
     <section id="about" className="section scroll-mt-10  relative py-24">
       <div className="flex flex-col gap-8 container w-full">
-        <h2 className="font-bold text-2xl text-white drop-shadow-glow">
+        <h2 className="font-bold text-2xl text-black drop-shadow-glow dark:text-white">
           {t("title")}
         </h2>
 
         <div className="flex flex-col justify-between items-center gap-12 xl:flex-row">
-          <div className="leading-5 space-y-2 text-[#dbdbe0] xl:max-w-[60%]">
+          <div className="leading-5 space-y-2 text-dark xl:max-w-[60%] dark:text-light">
             <div className="size-32 p-2 float-right ml-1.5 glass md:p-3 md:size-40">
               <Image alt="" src={MePhoto} className="rounded-[35px]" />
             </div>
 
-            <p>{t("main.1")}</p>
+            <p className="!my-0">{t("main.1")}</p>
 
             <p>{t("main.2")}</p>
 
             <p>
               {t.rich("main.3", {
                 exp: () => (
-                  <span className="text-white drop-shadow-glow">
+                  <span className="text-black drop-shadow-glow dark:text-white">
                     {experienceString + "+"}
                   </span>
                 ),
@@ -51,7 +50,7 @@ export default function About() {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    <span className="text-white drop-shadow-glow underline">
+                    <span className="text-black drop-shadow-glow underline dark:text-white">
                       {e}
                     </span>
                   </a>

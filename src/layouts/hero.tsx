@@ -32,13 +32,13 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="flex items-center justify-center relative h-screen text-[#dbdbe0]"
+      className="flex items-center justify-center relative h-screen text-dark dark:text-light"
     >
       <div className="container w-full flex flex-col text-center justify-between gap-24 md:text-start">
         <div className="flex flex-col gap-1">
           <p className="text-2xl md:text-3xl">{t("intro")}</p>
 
-          <h1 className="text-4xl font-bold linear-wipe drop-shadow-glow md:text-6xl">
+          <h1 className="text-4xl font-bold linear-wipe drop-shadow-glow dark:drop-shadow-glow-dark md:text-6xl">
             {t("main")}
           </h1>
         </div>
@@ -47,7 +47,7 @@ export default function Hero() {
           <Link
             href="https://linkedin.com/in/henryornellas"
             target="blank"
-            className="transition-all duration-300 hover:text-white hover:drop-shadow-glow"
+            className="transition-all duration-300 hover:text-black hover:drop-shadow-glow dark:hover:drop-shadow-glow-dark dark:hover:text-white"
           >
             <i className="fa-brands fa-linkedin" />
           </Link>
@@ -55,7 +55,7 @@ export default function Hero() {
           <Link
             href="https://github.com/henryornellas"
             target="blank"
-            className="transition-all duration-300 hover:text-white hover:drop-shadow-glow"
+            className="transition-all duration-300 hover:text-black hover:drop-shadow-glow dark:hover:drop-shadow-glow-dark dark:hover:text-white"
           >
             <i className="fa-brands fa-github" />
           </Link>
