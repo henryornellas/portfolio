@@ -122,7 +122,7 @@ export default function Navbar() {
                   <Link
                     key={link}
                     href={link}
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-1.5"
                   >
                     <Flag className="w-5" />
                     {label}
