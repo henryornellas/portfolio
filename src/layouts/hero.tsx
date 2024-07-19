@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export const slugs = [
   "typescript",
@@ -34,32 +35,94 @@ export default function Hero() {
       id="home"
       className="flex items-center justify-center relative h-screen text-dark dark:text-light"
     >
-      <div className="container w-full flex flex-col text-center justify-between gap-24 md:text-start">
+      <div className="container w-full flex flex-col text-center items-center justify-between gap-24 md:items-start md:text-start">
         <div className="flex flex-col gap-1">
-          <p className="text-2xl md:text-3xl">{t("intro")}</p>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: .9 }}
+            variants={{
+              hidden: { opacity: 0, y: -10 },
+              visible: { opacity: 1, y: 0, }
+            }}
+            className="text-2xl md:text-3xl">
+            {t("intro")}
+          </motion.p>
 
-          <h1 className="text-4xl font-bold linear-wipe drop-shadow-glow dark:drop-shadow-glow-dark md:text-6xl">
+          <motion.h1
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: .9 }}
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0, }
+            }}
+            className="text-4xl font-bold linear-wipe drop-shadow-glow dark:drop-shadow-glow-dark md:text-6xl">
             {t("main")}
-          </h1>
+          </motion.h1>
         </div>
 
-        <div className="space-x-6 text-[2rem]">
-          <Link
-            href="https://linkedin.com/in/henryornellas"
-            target="blank"
-            className="transition-all duration-300 hover:text-black hover:drop-shadow-glow dark:hover:drop-shadow-glow-dark dark:hover:text-white"
-          >
-            <i className="fa-brands fa-linkedin" />
-          </Link>
+        <motion.ul
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: .9 }}
+          variants={{
+            visible: {
+              transition: { staggerChildren: 0.3 }
+            }
+          }}
+          className="flex gap-6 text-[2rem]">
 
-          <Link
-            href="https://github.com/henryornellas"
-            target="blank"
-            className="transition-all duration-300 hover:text-black hover:drop-shadow-glow dark:hover:drop-shadow-glow-dark dark:hover:text-white"
+          <motion.li
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
           >
-            <i className="fa-brands fa-github" />
-          </Link>
-        </div>
+            <Link
+              href="https://linkedin.com/in/henryornellas"
+              target="blank"
+              className="transition-all duration-300 hover:text-black hover:drop-shadow-glow dark:hover:drop-shadow-glow-dark dark:hover:text-white"
+            >
+              <i className="fa-brands fa-linkedin" />
+            </Link>
+          </motion.li>
+
+          <motion.li
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+
+            <Link
+              href="https://github.com/henryornellas"
+              target="blank"
+              className="transition-all duration-300 hover:text-black hover:drop-shadow-glow dark:hover:drop-shadow-glow-dark dark:hover:text-white"
+            >
+              <i className="fa-brands fa-github" />
+            </Link>
+          </motion.li>
+
+          <motion.li
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+
+            <Link
+              href="mailto:henrygabriellemos@hotmail.com"
+              target="blank"
+              className="transition-all duration-300 hover:text-black hover:drop-shadow-glow dark:hover:drop-shadow-glow-dark dark:hover:text-white"
+            >
+              <i className="fa-solid fa-envelope" />
+            </Link>
+          </motion.li>
+        </motion.ul>
       </div>
     </section>
   );

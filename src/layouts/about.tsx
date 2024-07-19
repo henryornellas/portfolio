@@ -1,8 +1,11 @@
+"use client"
+
 import Image from "next/image";
 import MePhoto from "@/public/assets/mephoto.jpg";
 import { IconCloud } from "@/components";
 import { slugs } from "./hero";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 export default function About() {
   const startTime = new Date(2023, 4);
@@ -23,7 +26,17 @@ export default function About() {
         </h2>
 
         <div className="flex flex-col justify-between items-center gap-12 xl:flex-row">
-          <div className="leading-5 space-y-2 text-dark xl:max-w-[60%] dark:text-light">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.9 }}
+            variants={{
+              hidden: { opacity: 0, x: -10 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            className="leading-5 space-y-2 text-dark xl:max-w-[60%] dark:text-light"
+          >
             <div className="size-32 p-2 float-right ml-1.5 glass md:p-3 md:size-40">
               <Image alt="" src={MePhoto} className="rounded-[35px]" />
             </div>
@@ -57,11 +70,21 @@ export default function About() {
                 ),
               })}
             </p>
-          </div>
+          </motion.div>
 
-          <div className="z-[5] size-[240px]">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.9 }}
+            variants={{
+              hidden: { opacity: 0, x: 10 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            className="z-[5] size-[240px]"
+          >
             <IconCloud iconSlugs={slugs} />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
