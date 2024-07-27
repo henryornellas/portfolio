@@ -4,29 +4,6 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export const slugs = [
-  "typescript",
-  "javascript",
-  "react",
-  "reactnative",
-  "html5",
-  "php",
-  "bootstrap",
-  "jquery",
-  "wordpress",
-  "android",
-  "tailwindcss",
-  "github",
-  "handlebarsdotjs",
-  "mui",
-  "sass",
-  "css3",
-  "nextdotjs",
-  "firebase",
-  "git",
-  "figma",
-];
-
 export default function Hero() {
   const t = useTranslations("hero");
 
@@ -41,12 +18,13 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: .9 }}
+            transition={{ duration: 0.9 }}
             variants={{
               hidden: { opacity: 0, y: -10 },
-              visible: { opacity: 1, y: 0, }
+              visible: { opacity: 1, y: 0 },
             }}
-            className="text-2xl md:text-3xl">
+            className="text-2xl md:text-3xl"
+          >
             {t("intro")}
           </motion.p>
 
@@ -54,12 +32,13 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: .9 }}
+            transition={{ duration: 0.9 }}
             variants={{
               hidden: { opacity: 0, y: 10 },
-              visible: { opacity: 1, y: 0, }
+              visible: { opacity: 1, y: 0 },
             }}
-            className="text-4xl font-bold linear-wipe drop-shadow-glow dark:drop-shadow-glow-dark md:text-6xl">
+            className="text-4xl font-bold linear-wipe drop-shadow-glow dark:drop-shadow-glow-dark md:text-6xl"
+          >
             {t("main")}
           </motion.h1>
         </div>
@@ -68,14 +47,14 @@ export default function Hero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: .9 }}
+          transition={{ duration: 0.9 }}
           variants={{
             visible: {
-              transition: { staggerChildren: 0.3 }
-            }
+              transition: { staggerChildren: 0.3 },
+            },
           }}
-          className="flex gap-6 text-[2rem]">
-
+          className="flex gap-6 text-[2rem]"
+        >
           <motion.li
             variants={{
               hidden: { opacity: 0, y: 10 },
@@ -97,7 +76,6 @@ export default function Hero() {
               visible: { opacity: 1, y: 0 },
             }}
           >
-
             <Link
               href="https://github.com/henryornellas"
               target="blank"
@@ -113,7 +91,6 @@ export default function Hero() {
               visible: { opacity: 1, y: 0 },
             }}
           >
-
             <Link
               href="mailto:henrygabriellemos@hotmail.com"
               target="blank"

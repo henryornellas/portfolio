@@ -1,11 +1,35 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import MePhoto from "@/public/assets/mephoto.jpg";
 import { IconCloud } from "@/components";
-import { slugs } from "./hero";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+
+const slugs = [
+  "typescript",
+  "javascript",
+  "react",
+  "reactnative",
+  "html5",
+  "php",
+  "bootstrap",
+  "jquery",
+  "wordpress",
+  "android",
+  "tailwindcss",
+  "github",
+  "handlebarsdotjs",
+  "mui",
+  "sass",
+  "css3",
+  "nextdotjs",
+  "firebase",
+  "git",
+  "figma",
+  "reacthookform",
+  "zod",
+];
 
 export default function About() {
   const startTime = new Date(2023, 4);
